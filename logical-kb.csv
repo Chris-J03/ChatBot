@@ -1,0 +1,31 @@
+all x.(Game(x) -> -Developer(x))
+
+all x.(Game(x) -> -Franchise(x))
+
+all x.(Developer(x) -> -Franchise(x))
+
+
+all x.(Call_Of_Duty(x) -> Franchise(x))
+
+Call_Of_Duty(Infinity_ward) -> Franchise(Infinity_Ward)
+Call_Of_Duty(Treyarch) -> Franchise(Treyarch)
+Call_Of_Duty(Sledgehammer_games) -> Franchise(Sledgehammer_Games)
+
+
+
+Franchise(Call_Of_Duty)
+
+Developer(Treyarch)
+Developer(Infinity_Ward)
+Developer(Sledgehammer_Games)
+
+
+Game(Modern_Warfare)
+Game(Black_Ops)
+Game(Advanced_Warfare)
+
+all x.(Modern_Warfare(x) -> Timeline(x))
+Modern_Warfare(Modern_Warfare_2007) -> Timeline(Modern_Warfare_2007)
+Modern_Warfare(Modern_Warfare_Modern_Day) -> Timeline(Modern_Warfare_Modern_Day)
+all x.(Black_Ops(x) -> Timeline(x))
+Black_Ops(Black_Ops_Cold_War) -> Timeline(Black_Ops_Cold_War)

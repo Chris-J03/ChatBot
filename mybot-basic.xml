@@ -1,0 +1,194 @@
+<aiml version="1.0.1" encoding="UTF-8">
+
+<!-- Greetings and Politeness -->
+<category> <pattern> HELLO </pattern>
+  <template>Hello! How are you?</template> </category>
+
+<category> <pattern> HELLO * </pattern>
+  <template><srai>HELLO</srai></template> </category>
+
+<category> <pattern> HI </pattern>
+  <template><srai>HELLO</srai></template> </category>
+
+<category> <pattern> HI * </pattern>
+  <template><srai>HELLO</srai></template> </category>
+
+<category> <pattern> HOW ARE YOU </pattern>
+  <template>I'm functioning within normal parameters, thanks for asking.</template></category>
+
+<category><pattern> I AM FINE </pattern>
+  <template>That's good to know. What would you like to discuss about?</template></category>
+
+<category><pattern> BYE </pattern>
+  <template>#0$Bye! Nice talking to you. You take care now.</template></category>
+
+<category><pattern> GOODBYE </pattern>
+  <template><srai>BYE</srai></template></category>
+
+<category><pattern> EXIT </pattern>
+  <template><srai>BYE</srai></template></category>
+
+<category> <pattern> THANKS </pattern>
+  <template>You are welcome.</template></category>
+
+<category> <pattern> THANK YOU </pattern>
+  <template><srai>THANKS</srai></template></category>
+
+<category> <pattern> CHEERS </pattern>
+  <template>Sure mate.</template></category>
+
+<category> <pattern> CHEERS * </pattern>
+  <template>Sure mate.</template></category>
+
+<!-- Expanded conversation abilities -->
+
+<category>
+    <pattern>WHAT IS YOUR FAVOURITE CALL OF DUTY GAME</pattern>
+    <template>It's hard to choose! Many fans love Call of Duty: Modern Warfare and Black Ops. What about you?</template>
+</category>
+
+<category>
+    <pattern>MY FAVORITE CALL OF DUTY IS *</pattern>
+    <template>Nice choice! <star/> is a great game. I love the maps it has in the mulitplayer mode!</template>
+</category>
+
+<category>
+    <pattern>WHEN WAS CALL OF DUTY RELEASED</pattern>
+    <template>The first Call of Duty game was released on October 29, 2003.</template>
+</category>
+
+<category>
+    <pattern>WHEN DID CALL OF DUTY MODERN WARFARE COME OUT</pattern>
+    <template>There are multiple Modern Warfare games. Do you mean the original 2007 release or the 2019 reboot?</template>
+</category>
+
+<category>
+    <pattern>WHAT IS THE BEST GUN IN CALL OF DUTY</pattern>
+    <template>That depends on the game and your playstyle! The M4A1 and MP5 are popular choices in Modern Warfare.</template>
+</category>
+
+<category>
+    <pattern>WHAT IS THE BEST PERK IN CALL OF DUTY</pattern>
+    <template>It depends on the game mode. Ghost and Overkill are fan favorites for multiplayer.</template>
+</category>
+
+<category>
+    <pattern>WHAT IS CALL OF DUTY ZOMBIES</pattern>
+    <template>Call of Duty Zombies is a survival mode where players fight against waves of the undead. It first appeared in World at War.</template>
+</category>
+
+<category>
+    <pattern>WHAT IS THE BEST ZOMBIES MAP</pattern>
+    <template>Many players love maps like Nacht der Untoten, Kino der Toten, and Origins. Do you have a favorite?</template>
+</category>
+
+<category>
+    <pattern>WHAT IS CALL OF DUTY WARZONE</pattern>
+    <template>Call of Duty Warzone is a free-to-play battle royale game set in the Call of Duty universe, first released in 2020.</template>
+</category>
+
+<category>
+    <pattern>WHAT IS THE BEST LOADOUT FOR WARZONE</pattern>
+    <template>The best loadout changes often with updates, but the Kilo 141 and MP5 combo was once a top choice!</template>
+</category>
+
+<!--- Wikipedia API -->
+<category>
+  <pattern>HOW BIG IS *</pattern>
+  <template><star index="1"/> is of varying size. Can you be more specific?</template>
+</category>
+
+<category>
+  <pattern>HOW BIG IS THE *</pattern>
+  <template><star index="1"/> can have different sizes. Are you asking about a specific measurement?</template>
+</category>
+
+<category>
+  <pattern>HOW BIG IS A *</pattern>
+  <template>The size of <star index="1"/> depends on various factors. Would you like more details?</template>
+</category>
+
+<category>
+  <pattern>WHAT IS A *</pattern>
+  <template>Are you asking for a definition of <star index="1"/>? I can help with that!</template>
+</category>
+
+<category>
+  <pattern>WHAT IS AN *</pattern>
+  <template><srai>WHAT IS A <star/></srai></template>
+</category>
+
+<category>
+  <pattern>DEFINE *</pattern>
+  <template><srai>WHAT IS A <star/></srai></template>
+</category>
+
+<category>
+  <pattern>WHO IS *</pattern>
+  <template><srai>WHAT IS A <star/></srai></template>
+</category>
+
+
+
+<category>
+    <pattern>GET NEWS ABOUT *</pattern>
+    <template>
+        <srai>NEWS <star/></srai>
+    </template>
+</category>
+
+<category>
+    <pattern>NEWS *</pattern>
+    <template>
+        #2$<star/>
+    </template>
+</category>
+
+<category>
+<pattern> I KNOW THAT * IS *</pattern>
+<template>
+#31$
+<star index="1"/>
+is
+<star index="2"/>
+</template>
+</category>
+<category>
+<pattern> CHECK THAT * IS *</pattern>
+<template>
+#32$
+<star index="1"/>
+is
+<star index="2"/>
+</template>
+</category>
+
+<category>
+  <pattern> PLAY HANGMAN </pattern>
+  <template>#34$<star index="1"/></template>
+</category>
+
+<!-- CNN Image Classification -->
+<category>
+  <pattern> IS THIS AN IMAGE OF * </pattern>
+  <template>#33$<star index="1"/></template>
+</category>
+
+<category>
+  <pattern> DOES THIS IMAGE CONTAIN * </pattern>
+  <template>#33$<star index="1"/></template>
+</category>
+
+<category>
+  <pattern> WHO IS IN THIS IMAGE </pattern>
+  <template>#33$UNKNOWN</template>
+</category>
+
+<!-- Default reaction -->
+<category><pattern> * </pattern>
+  <template>#99$<star index="1"/></template></category>
+  
+<category><pattern>  </pattern>
+  <template>#100$<star index="1"/></template></category>
+
+</aiml>
